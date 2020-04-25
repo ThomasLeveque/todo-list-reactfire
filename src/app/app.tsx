@@ -13,8 +13,8 @@ const App: React.FC = () => {
       </h1>
       <Suspense fallback="Loading...">
         <TodoList />
+        <TodoForm />
       </Suspense>
-      <TodoForm />
     </AppContainer>
   );
 };
