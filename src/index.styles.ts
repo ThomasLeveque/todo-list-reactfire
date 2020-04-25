@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const MyGlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
-
   * {
     margin: 0;
     padding: 0;
@@ -12,5 +10,11 @@ export const MyGlobalStyle = createGlobalStyle`
   body {
     font-family: 'Fjalla One', sans-serif;
     background-color: white;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 `;
