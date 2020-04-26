@@ -9,7 +9,7 @@ export const MyGlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Volkhov', serif;
     background-color: white;
   }
 
@@ -17,5 +17,9 @@ export const MyGlobalStyle = createGlobalStyle`
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  button, input {
+    font-family: 'Volkhov', serif;
   }
 `;
