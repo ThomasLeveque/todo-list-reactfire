@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ITodo } from '../../interfaces/todo.interface';
 import {
   CheckCircleOutlined,
   CheckCircleTwoTone,
@@ -9,10 +8,11 @@ import {
 } from '@ant-design/icons';
 import { useFirestore } from 'reactfire';
 
-import { TodoItemContainer } from './todo-item.styles';
+import { TodoItemContainer, TodoItemIcons } from './todo-item.styles';
+import { Todo } from '../todo';
 
 interface IProps {
-  todo: ITodo;
+  todo: Todo;
 }
 
 const TodoItem: React.FC<IProps> = ({ todo }) => {
@@ -60,20 +60,20 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
 
   return (
     <TodoItemContainer done={done} key={todo.value}>
-      <h4>
-        {isUpdating ? (
-          <input
-            onKeyPress={handleUpdateNewValue}
-            ref={inputRef}
-            type="text"
-            name="newValue"
-            onBlur={handleIsUpdatingChange}
-            onChange={handleChange}
-            value={newValue}
-          />
-        ) : (
-          value
-        )}
+      {isUpdating ? (
+        <input
+          onKeyPress={handleUpdateNewValue}
+          ref={inputRef}
+          type="text"
+          name="newValue"
+          onBlur={handleIsUpdatingChange}
+          onChange={handleChange}
+          value={newValue}
+        />
+      ) : (
+        <h3>{value}</h3>
+      )}
+      <TodoItemIcons>
         {done ? (
           <CheckCircleTwoTone twoToneColor="#52c41a" onClick={updateTodoDone} />
         ) : (
@@ -85,7 +85,7 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
           <EditTwoTone onClick={handleIsUpdatingChange} />
         )}
         <DeleteTwoTone twoToneColor="#eb2f96" onClick={deleteTodo} />
-      </h4>
+      </TodoItemIcons>
     </TodoItemContainer>
   );
 };

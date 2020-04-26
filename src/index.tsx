@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/app';
 import { FirebaseAppProvider } from 'reactfire';
@@ -17,7 +17,9 @@ const firebaseConfig = {
 ReactDOM.render(
   <FirebaseAppProvider firebaseConfig={firebaseConfig}>
     <MyGlobalStyle />
-    <App />
+    <Suspense fallback="Loading...">
+      <App />
+    </Suspense>
   </FirebaseAppProvider>,
   document.getElementById('root')
 );

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { TodoFormContainer } from './todo-form.styles';
 import { useFirestore } from 'reactfire';
+
+import { TodoFormContainer } from './todo-form.styles';
+import { Todo } from '../todo';
 
 const TodoForm: React.FC = () => {
   const [value, setValue] = useState<string>('');
@@ -15,7 +17,7 @@ const TodoForm: React.FC = () => {
     if (!value.length) return;
 
     const todosRef = firestore.collection('todos');
-    const todo = {
+    const todo: Todo = {
       value,
       done: false,
     };
@@ -29,8 +31,8 @@ const TodoForm: React.FC = () => {
 
   return (
     <TodoFormContainer onSubmit={handleSubmit}>
-      <label htmlFor="value">Add a todo :</label>
-      <input type="text" name="value" onChange={handleChange} value={value} />
+      <input placeholder="Add a todo" type="text" name="value" onChange={handleChange} value={value} />
+      <button type="submit">Add todo</button>
     </TodoFormContainer>
   );
 };
