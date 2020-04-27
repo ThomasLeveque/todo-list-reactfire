@@ -31,7 +31,14 @@ const TodoForm: React.FC = () => {
 
   return (
     <TodoFormContainer onSubmit={handleSubmit}>
-      <input placeholder="Add a todo" type="text" name="value" onChange={handleChange} value={value} />
+      <input
+        autoComplete="off"
+        placeholder="Add a todo"
+        type="text"
+        name="value"
+        onChange={handleChange}
+        value={value}
+      />
       <button type="submit">Add todo</button>
     </TodoFormContainer>
   );

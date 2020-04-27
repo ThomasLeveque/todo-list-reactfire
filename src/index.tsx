@@ -1,8 +1,10 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/app';
+import { LoadingOutlined } from '@ant-design/icons';
 import { FirebaseAppProvider } from 'reactfire';
-import { MyGlobalStyle } from './index.styles';
+
+import App from './app/app';
+import { MyGlobalStyle, LoadingContainer } from './index.styles';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDt-zZ9w7VDXJm-2279-qJJBUvrI000_2U',
@@ -17,7 +19,13 @@ const firebaseConfig = {
 ReactDOM.render(
   <FirebaseAppProvider firebaseConfig={firebaseConfig}>
     <MyGlobalStyle />
-    <Suspense fallback="Loading...">
+    <Suspense
+      fallback={
+        <LoadingContainer>
+          <LoadingOutlined />
+        </LoadingContainer>
+      }
+    >
       <App />
     </Suspense>
   </FirebaseAppProvider>,

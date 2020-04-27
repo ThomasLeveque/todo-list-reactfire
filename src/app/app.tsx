@@ -16,11 +16,13 @@ const App: React.FC = () => {
   return (
     <AppContainer>
       <h1>
-        My todo list <RocketOutlined />
+        My Todolist <RocketOutlined />
       </h1>
-      <TodoList title="Todo" todos={todos.filter((todo: Todo) => !todo.done)} />
-      <TodoList title="Done" todos={todos.filter((todo: Todo) => todo.done)} />
       <TodoForm />
+      <section>
+        <TodoList title="Todo" todos={todos.filter((todo: Todo) => !todo.done)} />
+        <TodoList title="Done" todos={todos.filter((todo: Todo) => todo.done)} />
+      </section>
     </AppContainer>
   );
 };

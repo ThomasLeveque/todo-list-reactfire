@@ -1,4 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+import colors from './app/app.colors';
 
 export const MyGlobalStyle = createGlobalStyle`
   * {
@@ -21,5 +23,18 @@ export const MyGlobalStyle = createGlobalStyle`
 
   button, input {
     font-family: 'Volkhov', serif;
+  }
+`;
+
+export const LoadingContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span.anticon {
+    color: ${colors.primary};
+    font-size: 30px;
   }
 `;

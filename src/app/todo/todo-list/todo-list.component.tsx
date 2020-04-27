@@ -20,15 +20,17 @@ const TodoList: React.FC<IProps> = ({ title, todos }) => {
   return (
     <TodoListContainer>
       <h2>{title}</h2>
-      <TodoListItems>
-        {transitions.map(({ item, props, key }) => {
-          return (
-            <animated.li key={key} style={props}>
-              <TodoItem todo={item} />
-            </animated.li>
-          );
-        })}
-      </TodoListItems>
+      {todos.length > 0 && (
+        <TodoListItems>
+          {transitions.map(({ item, props, key }) => {
+            return (
+              <animated.li key={key} style={props}>
+                <TodoItem todo={item} />
+              </animated.li>
+            );
+          })}
+        </TodoListItems>
+      )}
     </TodoListContainer>
   );
 };
