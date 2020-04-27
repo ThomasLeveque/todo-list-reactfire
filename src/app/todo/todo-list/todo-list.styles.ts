@@ -11,11 +11,15 @@ export const TodoListContainer = styled.div`
 
   h2 {
     text-align: center;
+
+    span.anticon {
+      color: ${colors.primary};
+    }
   }
 `;
 
 export const TodoListItems = styled.ul`
-  margin-top: 8px;
+  margin-top: 10px;
 
   li {
     &:not(:last-child) {

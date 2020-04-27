@@ -11,7 +11,7 @@ import { useFirestore } from 'reactfire';
 
 import { Todo } from '../todo';
 import colors from '../../app.colors';
-import { TodoItemContainer, TodoItemIcons } from './todo-item.styles';
+import { TodoItemContainer, TodoItemIcons, TodoItemContent } from './todo-item.styles';
 
 interface IProps {
   todo: Todo;
@@ -68,26 +68,28 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
   }, [isUpdating, value]);
 
   return (
-    <TodoItemContainer done={done} key={todo.value}>
-      {isUpdating ? (
-        <input
-          onKeyPress={handleUpdateNewValue}
-          ref={inputRef}
-          type="text"
-          name="newValue"
-          onBlur={handleIsUpdatingChange}
-          onChange={handleChange}
-          value={newValue}
-        />
-      ) : (
-        <h3>{value}</h3>
-      )}
-      <TodoItemIcons>
+    <TodoItemContainer key={todo.value}>
+      <TodoItemContent done={done}>
         {done ? (
           <CheckCircleTwoTone twoToneColor={colors.isDone} onClick={updateTodoDone} />
         ) : (
           <CheckCircleOutlined onClick={updateTodoDone} />
         )}
+        {isUpdating ? (
+          <input
+            onKeyPress={handleUpdateNewValue}
+            ref={inputRef}
+            type="text"
+            name="newValue"
+            onBlur={handleIsUpdatingChange}
+            onChange={handleChange}
+            value={newValue}
+          />
+        ) : (
+          <h3>{value}</h3>
+        )}
+      </TodoItemContent>
+      <TodoItemIcons>
         {updateLoading ? (
           <LoadingOutlined style={{ color: colors.primary }} />
         ) : isUpdating ? (

@@ -11,7 +11,7 @@ export const MyGlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Volkhov', serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
   }
 
@@ -22,7 +22,7 @@ export const MyGlobalStyle = createGlobalStyle`
   }
 
   button, input {
-    font-family: 'Volkhov', serif;
+    font-family: 'Montserrat', sans-serif;
   }
 `;
 

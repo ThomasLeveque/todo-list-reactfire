@@ -1,5 +1,5 @@
 import React from 'react';
-import { RocketOutlined } from '@ant-design/icons';
+import { RocketOutlined, ThunderboltOutlined, TrophyOutlined } from '@ant-design/icons';
 import { useFirestore, useFirestoreCollection } from 'reactfire';
 
 import TodoList from './todo/todo-list/todo-list.component';
@@ -20,8 +20,8 @@ const App: React.FC = () => {
       </h1>
       <TodoForm />
       <section>
-        <TodoList title="Todo" todos={todos.filter((todo: Todo) => !todo.done)} />
-        <TodoList title="Done" todos={todos.filter((todo: Todo) => todo.done)} />
+        <TodoList title="Todo" Icon={ThunderboltOutlined} todos={todos.filter((todo: Todo) => !todo.done)} />
+        <TodoList title="Done" Icon={TrophyOutlined} todos={todos.filter((todo: Todo) => todo.done)} />
       </section>
     </AppContainer>
   );

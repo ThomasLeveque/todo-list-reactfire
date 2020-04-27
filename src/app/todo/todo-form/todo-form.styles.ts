@@ -21,6 +21,7 @@ export const TodoFormContainer = styled.form`
   }
 
   button {
+    font-weight: 700;
     white-space: nowrap;
     margin-left: 20px;
     background-color: ${colors.secondary};
