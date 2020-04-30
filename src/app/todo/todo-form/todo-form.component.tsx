@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFirestore } from 'reactfire';
 
-import { TodoFormContainer } from './todo-form.styles';
+import { TodoFormContainer, TodoFormButton, TodoFormInput } from './todo-form.styles';
 import { Todo } from '../todo';
 
 const TodoForm: React.FC = () => {
@@ -20,7 +20,9 @@ const TodoForm: React.FC = () => {
     const todo: Todo = {
       value,
       done: false,
+      createdAt: Date.now(),
     };
+
     try {
       await todosRef.add(todo);
       setValue('');
@@ -31,7 +33,7 @@ const TodoForm: React.FC = () => {
 
   return (
     <TodoFormContainer onSubmit={handleSubmit}>
-      <input
+      <TodoFormInput
         autoComplete="off"
         placeholder="Add a todo"
         type="text"
@@ -39,7 +41,7 @@ const TodoForm: React.FC = () => {
         onChange={handleChange}
         value={value}
       />
-      <button type="submit">Add todo</button>
+      <TodoFormButton type="submit">Add todo</TodoFormButton>
     </TodoFormContainer>
   );
 };

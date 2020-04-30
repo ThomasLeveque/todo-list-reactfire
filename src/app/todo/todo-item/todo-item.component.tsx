@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   CheckCircleOutlined,
-  CheckCircleTwoTone,
+  CloseCircleTwoTone,
   DeleteTwoTone,
   EditTwoTone,
-  CloseCircleTwoTone,
   LoadingOutlined,
 } from '@ant-design/icons';
 import { useFirestore } from 'reactfire';
@@ -67,11 +66,16 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
     }
   }, [isUpdating, value]);
 
+  const variants = {
+    visible: { opacity: 1, scale: 1, y: 0 },
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+  };
+
   return (
-    <TodoItemContainer key={todo.value}>
+    <TodoItemContainer initial="hidden" animate="visible" variants={variants}>
       <TodoItemContent done={done}>
         {done ? (
-          <CheckCircleTwoTone twoToneColor={colors.isDone} onClick={updateTodoDone} />
+          <CloseCircleTwoTone twoToneColor={colors.isDone} onClick={updateTodoDone} />
         ) : (
           <CheckCircleOutlined onClick={updateTodoDone} />
         )}
@@ -86,7 +90,7 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
             value={newValue}
           />
         ) : (
-          <h3>{value}</h3>
+          <h3 onClick={handleIsUpdatingChange}>{value}</h3>
         )}
       </TodoItemContent>
       <TodoItemIcons>

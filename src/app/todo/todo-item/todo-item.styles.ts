@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import colors from '../../app.colors';
 
@@ -6,7 +7,7 @@ interface ITodoItemContentProps {
   done: boolean;
 }
 
-export const TodoItemContainer = styled.div`
+export const TodoItemContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 20px;
@@ -35,6 +36,7 @@ export const TodoItemContent = styled.div<ITodoItemContentProps>`
     font-weight: 400;
     word-break: break-word;
     justify-self: start;
+    width: 100%;
   }
 
   input {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import TodoItem from '../todo-item/todo-item.component';
 import { Todo } from '../todo';
-import { TodoListContainer, TodoListItems } from './todo-list.styles';
+import { TodoListContainer, TodoListItems, TodoListItem, TodoListTitle } from './todo-list.styles';
 
 interface IProps {
   title: string;
@@ -12,14 +12,18 @@ interface IProps {
 
 const TodoList: React.FC<IProps> = ({ title, todos, Icon }) => {
   return (
-    <TodoListContainer>
-      <h2>
+    <TodoListContainer initial={false} animate>
+      <TodoListTitle animate>
         {title} <Icon />
-      </h2>
+      </TodoListTitle>
       {todos.length > 0 && (
         <TodoListItems>
           {todos.map((todo: Todo, index: number) => {
-            return <TodoItem key={index} todo={todo} />;
+            return (
+              <TodoListItem animate key={index}>
+                <TodoItem todo={todo} />
+              </TodoListItem>
+            );
           })}
         </TodoListItems>
       )}

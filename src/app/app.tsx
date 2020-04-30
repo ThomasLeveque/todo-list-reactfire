@@ -5,24 +5,24 @@ import { useFirestore, useFirestoreCollection } from 'reactfire';
 import TodoList from './todo/todo-list/todo-list.component';
 import TodoForm from './todo/todo-form/todo-form.component';
 import { Todo } from './todo/todo';
-import { AppContainer } from './app.styles';
+import { AppContainer, TodoLists, TodoTitle } from './app.styles';
 
 const App: React.FC = () => {
   const firestore = useFirestore();
-  const todosRef: firebase.firestore.CollectionReference = firestore.collection('todos');
+  const todosRef: firebase.firestore.Query = firestore.collection('todos').orderBy('createdAt', 'desc');
   const snapshot: firebase.firestore.QuerySnapshot = useFirestoreCollection<null>(todosRef);
   const todos: Todo[] = snapshot.docs.map((doc: firebase.firestore.QueryDocumentSnapshot) => new Todo(doc));
 
   return (
     <AppContainer>
-      <h1>
+      <TodoTitle>
         My Todolist <RocketOutlined />
-      </h1>
+      </TodoTitle>
       <TodoForm />
-      <section>
+      <TodoLists>
         <TodoList title="Todo" Icon={ThunderboltOutlined} todos={todos.filter((todo: Todo) => !todo.done)} />
         <TodoList title="Done" Icon={TrophyOutlined} todos={todos.filter((todo: Todo) => todo.done)} />
-      </section>
+      </TodoLists>
     </AppContainer>
   );
 };
