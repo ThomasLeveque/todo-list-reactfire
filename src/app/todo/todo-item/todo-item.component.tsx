@@ -7,6 +7,7 @@ import {
   LoadingOutlined,
 } from '@ant-design/icons';
 import { useFirestore } from 'reactfire';
+import { motion } from 'framer-motion';
 
 import { Todo } from '../todo';
 import colors from '../../app.colors';
@@ -72,7 +73,7 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
   };
 
   return (
-    <TodoItemContainer initial="hidden" animate="visible" variants={variants}>
+    <TodoItemContainer as={motion.div} initial="hidden" animate="visible" variants={variants}>
       <TodoItemContent done={done}>
         {done ? (
           <CloseCircleTwoTone twoToneColor={colors.isDone} onClick={updateTodoDone} />

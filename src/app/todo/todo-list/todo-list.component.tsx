@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import TodoItem from '../todo-item/todo-item.component';
 import { Todo } from '../todo';
@@ -12,15 +13,15 @@ interface IProps {
 
 const TodoList: React.FC<IProps> = ({ title, todos, Icon }) => {
   return (
-    <TodoListContainer initial={false} animate>
-      <TodoListTitle animate>
+    <TodoListContainer as={motion.article} initial={false} animate>
+      <TodoListTitle as={motion.h2} animate>
         {title} <Icon />
       </TodoListTitle>
       {todos.length > 0 && (
         <TodoListItems>
           {todos.map((todo: Todo, index: number) => {
             return (
-              <TodoListItem animate key={index}>
+              <TodoListItem as={motion.li} animate key={index}>
                 <TodoItem todo={todo} />
               </TodoListItem>
             );
