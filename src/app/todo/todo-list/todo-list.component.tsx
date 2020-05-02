@@ -19,9 +19,9 @@ const TodoList: React.FC<IProps> = ({ title, todos, Icon }) => {
       </TodoListTitle>
       {todos.length > 0 && (
         <TodoListItems>
-          {todos.map((todo: Todo, index: number) => {
+          {todos.map((todo: Todo) => {
             return (
-              <TodoListItem as={motion.li} animate key={index}>
+              <TodoListItem as={motion.li} animate key={todo.id}>
                 <TodoItem todo={todo} />
               </TodoListItem>
             );
