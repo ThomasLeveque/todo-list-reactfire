@@ -63,6 +63,7 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
     if (isUpdating) {
       inputRef.current?.focus();
     } else {
+      // Reset the newValue with actual value
       setNewValue(value);
     }
   }, [isUpdating, value]);
