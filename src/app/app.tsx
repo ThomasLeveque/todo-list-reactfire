@@ -1,6 +1,7 @@
 import React from 'react';
 import { RocketOutlined, ThunderboltOutlined, TrophyOutlined } from '@ant-design/icons';
 import { useFirestore, useFirestoreCollection } from 'reactfire';
+import { motion } from 'framer-motion';
 
 import TodoList from './todo/todo-list/todo-list.component';
 import TodoForm from './todo/todo-form/todo-form.component';
@@ -14,7 +15,7 @@ const App: React.FC = () => {
   const todos: Todo[] = snapshot.docs.map((doc: firebase.firestore.QueryDocumentSnapshot) => new Todo(doc));
 
   return (
-    <AppContainer>
+    <AppContainer as={motion.div} animate="animate" initial="initial">
       <TodoTitle>
         My Todolist <RocketOutlined />
       </TodoTitle>

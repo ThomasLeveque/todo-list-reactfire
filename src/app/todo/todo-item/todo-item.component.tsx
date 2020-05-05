@@ -68,13 +68,8 @@ const TodoItem: React.FC<IProps> = ({ todo }) => {
     }
   }, [isUpdating, value]);
 
-  const variants = {
-    visible: { opacity: 1, scale: 1, y: 0 },
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-  };
-
   return (
-    <TodoItemContainer as={motion.div} initial="hidden" animate="visible" variants={variants}>
+    <TodoItemContainer as={motion.div} animate>
       <TodoItemContent done={done}>
         {done ? (
           <CloseCircleTwoTone twoToneColor={colors.isDone} onClick={updateTodoDone} />

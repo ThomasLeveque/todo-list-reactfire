@@ -11,6 +11,15 @@ interface IProps {
   todos: Todo[];
 }
 
+const stagger = {
+  animate: { transition: { staggerChildren: 0.08 } },
+};
+
+const animateItem = {
+  animate: { opacity: 1, scale: 1, y: 0 },
+  initial: { opacity: 0, scale: 0.8, y: 20 },
+};
+
 const TodoList: React.FC<IProps> = ({ title, todos, Icon }) => {
   return (
     <TodoListContainer as={motion.article} initial={false} animate>
@@ -18,10 +27,10 @@ const TodoList: React.FC<IProps> = ({ title, todos, Icon }) => {
         {title} <Icon />
       </TodoListTitle>
       {todos.length > 0 && (
-        <TodoListItems>
+        <TodoListItems as={motion.ul} variants={stagger}>
           {todos.map((todo: Todo) => {
             return (
-              <TodoListItem as={motion.li} animate key={todo.id}>
+              <TodoListItem as={motion.li} variants={animateItem} key={todo.id}>
                 <TodoItem todo={todo} />
               </TodoListItem>
             );
