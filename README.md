@@ -15,7 +15,7 @@ A realtime todolist to always keep your objectives in mind
 * Run ``yarn start`` command to start the project
 * Run ``yarn build`` command to build the project
 
-Finaly you can enjoy adding todos 🔥🔥🔥
+Finally you can enjoy adding todos 🔥🔥🔥
 
 ## Made with
 
