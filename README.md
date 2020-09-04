@@ -1,44 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Todolist with reactfire
 
-## Available Scripts
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://forthebadge.com)
 
-In the project directory, you can run:
+A realtime todolist to always keep your objectives in mind
 
-### `yarn start`
+## Install
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Clone or fork the project ``git@github.com:ThomasLeveque/todo-list-reactfire.git`` 
+* Run ``yarn`` command to install all the dependencies
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Launch
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Run ``yarn start`` command to start the project
+* Run ``yarn build`` command to build the project
 
-### `yarn build`
+Finaly you can enjoy adding todos 🔥🔥🔥
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Made with
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* [react](https://reactjs.org) - A JavaScript library for building user interfaces
+* [typescript](https://www.typescriptlang.org) - Typed JavaScript at Any Scale.
+* [firebase](https://firebase.google.com) - Firebase helps mobile and web app teams succeed
+* [reactfire](https://firebaseopensource.com/projects/firebaseextended/reactfire/) - Hooks, Context Providers, and Components that make it easy to interact with Firebase
+* [styled-components](https://styled-components.com) - Visual primitives for the component age
+* [framer-motion](https://www.framer.com/motion) - A production-ready motion library for React
+* [@ant-design/icons](https://ant.design/components/icon) - Set of icons provide by ant design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Online
 
-### `yarn eject`
+You can find the project deploy with [vercel](https://vercel.com) right here : [todo-list-reactfire](https://todo-list-reactfire.now.sh)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Authors
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **Thomas Leveque** _alias_ [ThomasLeveque](https://github.com/ThomasLeveque)
